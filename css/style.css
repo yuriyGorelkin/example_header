@@ -1,0 +1,251 @@
+@import './fonts.css';
+@import './global.css';
+
+.header {
+    background-color: #51296f;
+}
+
+.header__inner {
+    width: 930px;
+    margin: 0 auto;
+    padding: 10px 0 20px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    /* font-family: "Montserrat-Regular"; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.header__nav-logo {
+    width: 180px;
+    height: 39px;
+    background-color: #fff;
+    opacity: 0.102;
+}
+
+.nav-menu-list {
+    display: flex;
+    position: relative;
+}
+
+.nav-menu-item:last-child>a {
+    border-right: none;
+}
+
+.dots {
+    font-size: 40px;
+    line-height: 0px;
+    transform: translateY(-2px);
+}
+
+.nav-menu-item>a:hover {
+    color: #ffd282;
+}
+
+.dynamic-nav-menu {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    right: -28%;
+    top: 158%;
+    padding: 18px 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.34);
+    border-radius: 4px;
+}
+
+.dynamic-nav-menu.open {
+    display: block;
+    visibility: visible;
+    animation: fadeIn;
+    animation-duration: .5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dynamic-nav-menu::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 13px solid #ffffff;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.dynamic-menu-item>a {
+    display: block;
+    padding-bottom: 20px;
+    color: #51296f;
+    transition: color 0.3s ease-out;
+    font-weight: 600;
+}
+
+.dynamic-menu-item>a:hover {
+    color: #de53a4;
+}
+
+.dynamic-menu-item>input {
+    min-width: 250px;
+    padding: 14px 14px 14px 35px;
+    border: none;
+    box-shadow: inset 1.414px 1.414px 1px 0px rgba(35, 0, 61, 0.36);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background-image: url(../common/images/search-icon.png);
+    background-repeat: no-repeat;
+    background-position: center left 10px;
+    margin-bottom: 18px;
+}
+
+.dynamic-menu-item>input::placeholder {
+    color: rgba(0, 0, 0);
+}
+
+.dynamic-menu-item>input:-ms-input-placeholder {
+    color: #000000 !important;
+}
+
+.social-link-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-link {
+    width: 35px;
+    height: 30px;
+    background: url(../common/images/social-icon.png) 0 0 / 237px 26px no-repeat;
+    overflow: hidden;
+}
+
+.twitter {
+    background-position: 0 0;
+}
+
+.facebook {
+    background-position: -40px 0;
+}
+
+.google {
+    background-position: -80px 0;
+}
+
+.linkedIn {
+    background-position: -125px 0;
+}
+
+.mail {
+    background-position: -165px 0;
+}
+
+.rss {
+    background-position: -206px 0;
+}
+
+.header__nav-auth .up {
+    font-weight: 700;
+    color: #f9b132;
+}
+
+.basket {
+    position: relative;
+    text-align: center;
+    border-right: none;
+    padding-left: 15px;
+}
+
+.basket>svg {
+    transform: translateY(2px);
+    fill: #fff;
+}
+
+/* Класс который будет добавляться из JS для подсветки корзины*/
+.basket.full>svg {
+    fill: #f9b233;
+}
+
+.basket span {
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    border-radius: 15px/20px;
+    background-color: #de55ad;
+    top: 0;
+    right: 2px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.basket.full span {
+    display: block;
+}
+
+.header__search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__search input {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.header__search-input {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    padding: 11px 11px 11px 40px;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    background-position: center left 10px;
+    margin-right: 10px;
+}
+
+.search-events {
+    background-image: url(../common/images/search-icon.png);
+    flex-grow: 6;
+}
+
+.search-place {
+    background-image: url(../common/images/place-icon.png);
+    flex-grow: 1;
+    padding-left: 35px;
+}
+
+.header__search-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #51296f;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.34);
+    display: inline-block;
+    padding: 0 15px;
+    background-color: #f9b132;
+    transition: background-color 0.3s ease-out;
+}
